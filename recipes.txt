@@ -1,0 +1,3 @@
+ice cream,milk,fruits
+ice,milk,fruts
+purin,egg,milk
