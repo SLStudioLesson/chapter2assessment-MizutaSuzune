@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import data.RecipeFileHandler;
+
 
 public class RecipeUI {
     private BufferedReader reader;
@@ -35,11 +35,19 @@ public class RecipeUI {
                 String choice = reader.readLine();
 
                 switch (choice) {
-                    case "1":
-                        // 設問1: 一覧表示機能
+                    // case "1":
+                    //     // 設問1: 一覧表示機能
+                    //     RecipeFileHandler recipehand = new RecipeFileHandler();
+                    //     ArrayList<String> recipes = new ArrayList<>();
+                    //     recipes = recipehand.readRecipes();
+                    //     for(int i = 0; i < recipes.size(); i++) {
+                    //         String recipeNm = recipes;
+                    //         }
                         break;
                     case "2":
                         // 設問2: 新規登録機能
+                        addNewRecipe();
+
                         break;
                     case "3":
                         // 設問3: 検索機能
@@ -72,6 +80,11 @@ public class RecipeUI {
      * @throws java.io.IOException 入出力が受け付けられない
      */
     private void addNewRecipe() throws IOException {
+        System.out.print("Enter recipe name: ");
+        String recipeNm = reader.readLine();
+        System.out.print("Enter main ingredients ");
+        String ingredients = reader.readLine();
+        fileHandler.addRecipe(recipeNm,ingredients);
 
     }
 
@@ -82,6 +95,17 @@ public class RecipeUI {
      * @throws java.io.IOException 入出力が受け付けられない
      */
     private void searchRecipe() throws IOException {
+        System.out.print("Enter search query ");
+        String[] searchWord = (reader.readLine()).split("&");
+        for(String word : searchWord) {
+        String searchNm = word.split("=")[0];
+        String searchIng = word.split("=")[1];
+        }
+        
+        // for(String all : fileHandler.readRecipes()) {
+        //     if(all.indexOf("searchNm") != -1 && all.index);
+        // }
+
 
     }
 
